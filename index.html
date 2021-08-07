@@ -44,7 +44,7 @@
         navigator.serviceWorker.getRegistration().then(function (reg) {
           var options = {
             body: 'Here is a notification body!',
-            icon: 'images/example.png',
+            icon: 'https://dpssl.net/images/Logo-white.png',
             vibrate: [100, 50, 100],
             data: {
               dateOfArrival: Date.now(),
@@ -52,16 +52,16 @@
             },
             actions: [
               {
-                action: 'explore', title: 'Explore this new world',
-                icon: 'images/checkmark.png'
+                action: 'https://dpssl.net/', title: 'Explore this new world',
+                icon: 'https://dpssl.net/images/Logo-white.png'
               },
               {
-                action: 'close', title: 'Close notification',
-                icon: 'images/xmark.png'
+                action: 'https://dpssl.net/', title: 'Close notification',
+                icon: 'https://dpssl.net/images/Logo-white.png'
               },
             ]
           };
-          console.log("H")
+          // console.log("H")
           reg.showNotification('Hello world!', options);
         });
       }
