@@ -8,7 +8,7 @@
     if (action === 'close') {
       notification.close();
     } else {
-      clients.openWindow('https://www.example.com');
+      clients.openWindow('https://dpssl.net/');
       notification.close();
     }
   });
