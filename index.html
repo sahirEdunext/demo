@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi this is demo web app </h1>
+
+
+    <script>
+        Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+
+
+
+displayNotification()
+
+
+function displayNotification() {
+  if (Notification.permission == 'granted') {
+    navigator.serviceWorker.getRegistration().then(function(reg) {
+      var options = {
+        body: 'Here is a notification body!',
+        icon: 'images/example.png',
+        vibrate: [100, 50, 100],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        },
+        actions: [
+          {action: 'explore', title: 'Explore this new world',
+            icon: 'images/checkmark.png'},
+          {action: 'close', title: 'Close notification',
+            icon: 'images/xmark.png'},
+        ]
+      };
+      reg.showNotification('Hello world!', options);
+    });
+  }
+}
+
+
+// self.addEventListener('notificationclose', function(e) {
+//   var notification = e.notification;
+//   var primaryKey = notification.data.primaryKey;
+
+//   console.log('Closed notification: ' + primaryKey);
+// });
+    </script>
+</body>
+</html>
