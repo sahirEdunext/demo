@@ -54,7 +54,7 @@
       if (Notification.permission == 'granted') {
         navigator.serviceWorker.getRegistration().then(function (reg) {
           var options = {
-            body: 'Here is a notification body!',
+            body: 'Here is a notification body! after 10sec',
             icon: 'https://dpssl.net/images/Logo-white.png',
             vibrate: [100, 50, 100],
             data: {
